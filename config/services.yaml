@@ -1,5 +1,6 @@
 services:
   DMP\CQRS\:
+    resource: '../src/*'
     autowire: true
     autoconfigure: true
 
