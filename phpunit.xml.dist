@@ -11,7 +11,6 @@
         <ini name="intl.default_locale" value="en" />
         <ini name="intl.error_level" value="0" />
         <ini name="memory_limit" value="-1" />
-        <env name="KERNEL_CLASS" value="Sellit\AuthBundle\Tests\Lib\TestKernel" />
         <env name="SYMFONY_DEPRECATIONS_HELPER" value="disabled" />
         <env name="BOOTSTRAP_CLEAR_CACHE_ENV" value="test" />
         <env name="BOOTSTRAP_BYPASS_FINALS" value="true" />
