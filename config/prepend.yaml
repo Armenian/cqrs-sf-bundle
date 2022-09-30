@@ -1,0 +1,17 @@
+framework:
+  messenger:
+    default_bus: messenger.bus.command
+    buses:
+      messenger.bus.command:
+        default_middleware: allow_no_handlers
+        middleware:
+          - doctrine_ping_connection
+          - 'DMP\CQRS\Infrastructure\Bus\ExceptionMiddleware'
+      messenger.bus.query:
+        middleware:
+          - 'DMP\CQRS\Infrastructure\Bus\ExceptionMiddleware'
+      messenger.bus.event:
+        default_middleware: allow_no_handlers
+        middleware:
+          - doctrine_ping_connection
+          - 'DMP\CQRS\Infrastructure\Bus\ExceptionMiddleware'

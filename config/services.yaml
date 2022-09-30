@@ -4,20 +4,6 @@ services:
     autowire: true
     autoconfigure: true
 
-  _instanceof:
-    DMP\CQRS\Application\Command\CommandHandlerInterface:
-      public: true
-      tags:
-        - { name: messenger.message_handler, bus: messenger.bus.command }
-    DMP\CQRS\Application\Event\EventHandlerInterface:
-      public: true
-      tags:
-        - { name: messenger.message_handler, bus: event.bus }
-    DMP\CQRS\Application\Query\QueryHandlerInterface:
-      public: true
-      tags:
-        - { name: messenger.message_handler, bus: messenger.bus.query }
-
   DMP\CQRS\Infrastructure\Bus\Command\CommandBus:
     arguments:
       - '@messenger.bus.command'
