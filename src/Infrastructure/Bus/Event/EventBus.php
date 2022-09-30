@@ -8,7 +8,7 @@ use DMP\CQRS\Application\Event\EventBusInterface;
 use DMP\CQRS\Application\Event\EventInterface;
 use DMP\CQRS\Infrastructure\Bus\AbstractBus;
 
-class EventBus extends AbstractBus implements EventBusInterface
+final class EventBus extends AbstractBus implements EventBusInterface
 {
     public function handle(EventInterface $event, array $stamps = []): void
     {

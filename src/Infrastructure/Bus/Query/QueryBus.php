@@ -9,7 +9,7 @@ use DMP\CQRS\Application\Query\QueryInterface;
 use DMP\CQRS\Infrastructure\Bus\AbstractBus;
 use Symfony\Component\Messenger\Stamp\HandledStamp;
 
-class QueryBus extends AbstractBus implements QueryBusInterface
+final class QueryBus extends AbstractBus implements QueryBusInterface
 {
 
     public function handle(QueryInterface $query): mixed

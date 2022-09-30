@@ -9,5 +9,5 @@ use Symfony\Component\Messenger\MessageBusInterface;
 
 abstract class AbstractBus
 {
-    public function __construct(protected MessageBusInterface $messageBus){}
+    public function __construct(protected readonly MessageBusInterface $messageBus){}
 }
