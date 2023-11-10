@@ -4,14 +4,14 @@ services:
     autowire: true
     autoconfigure: true
 
-  DMP\CQRS\Infrastructure\Bus\Command\CommandBus:
+  DMP\CQRS\Infrastructure\Bus\Command\CommandDispatcher:
     arguments:
       - '@messenger.bus.command'
 
-  DMP\CQRS\Infrastructure\Bus\Event\EventBus:
+  DMP\CQRS\Infrastructure\Bus\Event\EventDispatcher:
     arguments:
       - '@messenger.bus.event'
 
-  DMP\CQRS\Infrastructure\Bus\Query\QueryBus:
+  DMP\CQRS\Infrastructure\Bus\Query\QueryDispatcher:
     arguments:
       - '@messenger.bus.query'
