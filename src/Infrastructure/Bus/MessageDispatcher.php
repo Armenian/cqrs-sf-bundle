@@ -7,7 +7,7 @@ namespace DMP\CQRS\Infrastructure\Bus;
 
 use Symfony\Component\Messenger\MessageBusInterface;
 
-abstract class AbstractBus
+abstract class MessageDispatcher
 {
     public function __construct(protected readonly MessageBusInterface $messageBus){}
 }

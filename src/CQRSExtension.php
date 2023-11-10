@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace DMP\CQRS;
 
-use DMP\CQRS\Application\Command\CommandHandlerInterface;
-use DMP\CQRS\Application\Event\EventHandlerInterface;
-use DMP\CQRS\Application\Query\QueryHandlerInterface;
+use DMP\CQRS\Application\Command\CommandHandler;
+use DMP\CQRS\Application\Event\EventHandler;
+use DMP\CQRS\Application\Query\QueryHandler;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader as ConfigYamlFileLoader;
 use Exception;
 
-class CQRSExtension extends Extension
+final class CQRSExtension extends Extension
 {
 
     /**
@@ -24,11 +24,11 @@ class CQRSExtension extends Extension
         $loader = new ConfigYamlFileLoader($container, new FileLocator(__DIR__ . '/../config'));
         $loader->load('services.yaml');
 
-        $container->registerForAutoconfiguration(CommandHandlerInterface::class)
+        $container->registerForAutoconfiguration(CommandHandler::class)
             ->addTag('messenger.message_handler', ['bus' => 'messenger.bus.command']);
-        $container->registerForAutoconfiguration(QueryHandlerInterface::class)
+        $container->registerForAutoconfiguration(QueryHandler::class)
             ->addTag('messenger.message_handler', ['bus' => 'messenger.bus.query']);
-        $container->registerForAutoconfiguration(EventHandlerInterface::class)
+        $container->registerForAutoconfiguration(EventHandler::class)
             ->addTag('messenger.message_handler', ['bus' => 'messenger.bus.event']);
     }
 }

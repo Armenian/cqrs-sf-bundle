@@ -7,7 +7,7 @@ namespace DMP\CQRS\Application\Query;
 /**
  * @template QueryTemplate
  */
-interface QueryInterface
+interface Query
 {
 
 }

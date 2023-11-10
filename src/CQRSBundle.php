@@ -6,9 +6,8 @@ namespace DMP\CQRS;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class CQRSBundle extends Bundle
+final class CQRSBundle extends Bundle
 {
-
     public function getContainerExtensionClass(): string
     {
         return CQRSExtension::class;

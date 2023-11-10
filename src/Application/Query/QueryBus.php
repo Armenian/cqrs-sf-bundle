@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace DMP\CQRS\Application\Query;
 
-interface QueryBusInterface
+interface QueryBus
 {
     /**
      * @template QueryTemplate
-     * @param QueryInterface<QueryTemplate> $query
+     * @param Query<QueryTemplate> $query
      * @return QueryTemplate
      */
-    public function handle(QueryInterface $query): mixed;
+    public function handle(Query $query): mixed;
 }
